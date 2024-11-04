@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports = {
   name: 'ai',
-  description: 'Ask a question to the 𝙽𝚎𝚔𝚘 𝙰𝙸',
+  description: 'Ask a question to the JOSH 𝙰𝙸',
   author: 'Clarence',
   role: 1,
   async execute(senderId, args, pageAccessToken, sendMessage) {
@@ -15,7 +15,7 @@ module.exports = {
       // Send the response, split into chunks if necessary
       await sendResponseInChunks(senderId, text, pageAccessToken, sendMessage);
     } catch (error) {
-      console.error('Error calling 𝙽𝚎𝚔𝚘 𝙰𝙸:', error);
+      console.error('Error calling JOSH 𝙰𝙸:', error);
       sendMessage(senderId, { text: '👋🏻 Hello how can I assist you today?\nNote: Dont use ai instead question directly thankyou!!\nSorry for an error!!' }, pageAccessToken);
     }
   }

@@ -8,14 +8,14 @@ module.exports = {
   async execute(senderId, args, pageAccessToken, sendMessage) {
     const prompt = args.join(' ');
     try {
-      const apiUrl = `https://rest-api-french.onrender.com/api/neko?prompt=${encodeURIComponent(prompt)}&uid=${senderId}`;
+      const apiUrl = `https://rest-api-french.onrender.com/api/gpt4o?ask=${encodeURIComponent(prompt)}`;
       const response = await axios.get(apiUrl);
       const text = response.data.response;
 
       // Send the response, split into chunks if necessary
       await sendResponseInChunks(senderId, text, pageAccessToken, sendMessage);
     } catch (error) {
-      console.error('Error calling H𝙽𝚎𝚔𝚘 𝙰𝙸:', error);
+      console.error('Error calling 𝙽𝚎𝚔𝚘 𝙰𝙸:', error);
       sendMessage(senderId, { text: '👋🏻 Hello how can I assist you today?\nNote: Dont use ai instead question directly thankyou!!\nSorry for an error!!' }, pageAccessToken);
     }
   }
